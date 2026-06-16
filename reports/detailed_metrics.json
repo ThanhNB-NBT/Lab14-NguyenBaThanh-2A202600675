@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "version": "Agent_V2_Optimized",
+    "total": 55,
+    "timestamp": "2026-06-16 16:53:52",
+    "judge_mode": "nvidia",
+    "judge_models": "nvidia/llama-3.3-nemotron-super-49b-v1,nvidia/nemotron-3-nano-30b-a3b",
+    "rate_limit_rpm": 40
+  },
+  "release_gate": {
+    "decision": "APPROVE",
+    "thresholds": {
+      "score_delta_min": 0.2,
+      "pass_rate_min": 1.0,
+      "agreement_rate_min": 0.75,
+      "p95_latency_max": 2.0,
+      "cost_max_usd": 0.05
+    },
+    "deltas": {
+      "avg_score": 2.936363636363636,
+      "pass_rate": 0.9272727272727272,
+      "hit_rate": 0.018181818181818188,
+      "mrr": 0.039393939393939315,
+      "agreement_rate": 0.3090909090909091,
+      "p95_latency_seconds": -0.053500000000000006,
+      "estimated_cost_usd": 0.00039139999999999986
+    },
+    "checks": {
+      "quality_score_delta": true,
+      "quality_pass_rate": true,
+      "retrieval_hit_rate_non_regression": true,
+      "retrieval_mrr_non_regression": true,
+      "judge_agreement": true,
+      "performance_latency": true,
+      "cost_budget": true
+    },
+    "reason": "V2 đạt ngưỡng chất lượng, retrieval, agreement, hiệu năng và chi phí."
+  },
+  "metrics": [
+    {
+      "metric": "avg_score",
+      "baseline": 1.9,
+      "candidate": 4.836363636363636,
+      "delta": 2.936363636363636,
+      "display": {
+        "baseline": "1.90/5",
+        "candidate": "4.84/5",
+        "delta": "2.94/5"
+      }
+    },
+    {
+      "metric": "pass_rate",
+      "baseline": 0.07272727272727272,
+      "candidate": 1.0,
+      "delta": 0.9272727272727272,
+      "display": {
+        "baseline": "7.27%",
+        "candidate": "100.00%",
+        "delta": "92.73%"
+      }
+    },
+    {
+      "metric": "hit_rate",
+      "baseline": 0.9818181818181818,
+      "candidate": 1.0,
+      "delta": 0.018181818181818188,
+      "display": {
+        "baseline": "98.18%",
+        "candidate": "100.00%",
+        "delta": "1.82%"
+      }
+    },
+    {
+      "metric": "mrr",
+      "baseline": 0.9606060606060607,
+      "candidate": 1.0,
+      "delta": 0.039393939393939315,
+      "display": {
+        "baseline": "0.9606",
+        "candidate": "1.0000",
+        "delta": "0.0394"
+      }
+    },
+    {
+      "metric": "precision_at_k",
+      "baseline": 0.3696969696969697,
+      "candidate": 0.38181818181818183,
+      "delta": 0.012121212121212144,
+      "display": {
+        "baseline": "36.97%",
+        "candidate": "38.18%",
+        "delta": "1.21%"
+      }
+    },
+    {
+      "metric": "recall_at_k",
+      "baseline": 0.9727272727272728,
+      "candidate": 1.0,
+      "delta": 0.027272727272727226,
+      "display": {
+        "baseline": "97.27%",
+        "candidate": "100.00%",
+        "delta": "2.73%"
+      }
+    },
+    {
+      "metric": "agreement_rate",
+      "baseline": 0.5909090909090909,
+      "candidate": 0.9,
+      "delta": 0.3090909090909091,
+      "display": {
+        "baseline": "59.09%",
+        "candidate": "90.00%",
+        "delta": "30.91%"
+      }
+    },
+    {
+      "metric": "avg_latency_seconds",
+      "baseline": 0.14329272727272727,
+      "candidate": 0.09125454545454546,
+      "delta": -0.0520381818181818,
+      "display": {
+        "baseline": "0.1433s",
+        "candidate": "0.0913s",
+        "delta": "-0.0520s"
+      }
+    },
+    {
+      "metric": "p95_latency_seconds",
+      "baseline": 0.1527,
+      "candidate": 0.0992,
+      "delta": -0.053500000000000006,
+      "display": {
+        "baseline": "0.1527s",
+        "candidate": "0.0992s",
+        "delta": "-0.0535s"
+      }
+    },
+    {
+      "metric": "duration_seconds",
+      "baseline": 171.96529409999857,
+      "candidate": 168.95624110000063,
+      "delta": -3.009052999997948,
+      "display": {
+        "baseline": "171.9653s",
+        "candidate": "168.9562s",
+        "delta": "-3.0091s"
+      }
+    },
+    {
+      "metric": "total_tokens",
+      "baseline": 7651,
+      "candidate": 9608,
+      "delta": 1957,
+      "display": {
+        "baseline": "7651",
+        "candidate": "9608",
+        "delta": "1957"
+      }
+    },
+    {
+      "metric": "avg_tokens_per_case",
+      "baseline": 139.1090909090909,
+      "candidate": 174.6909090909091,
+      "delta": 35.58181818181819,
+      "display": {
+        "baseline": "139.11",
+        "candidate": "174.69",
+        "delta": "35.58"
+      }
+    },
+    {
+      "metric": "estimated_cost_usd",
+      "baseline": 0.0015302,
+      "candidate": 0.0019215999999999999,
+      "delta": 0.00039139999999999986,
+      "display": {
+        "baseline": "$0.00153020",
+        "candidate": "$0.00192160",
+        "delta": "$0.00039140"
+      }
+    }
+  ],
+  "baseline_case_stats": {
+    "status": {
+      "fail": 51,
+      "pass": 4
+    },
+    "type": {
+      "fact": 15,
+      "procedural": 15,
+      "ambiguous": 15,
+      "prompt-injection": 1,
+      "goal-hijacking": 1,
+      "out-of-context": 1,
+      "conflicting-info": 1,
+      "privacy-edge": 1,
+      "multi-hop": 5
+    },
+    "failure_cluster": {
+      "answer_quality_gap": 49,
+      "pass": 4,
+      "safety_guardrail_gap": 1,
+      "retrieval_miss": 1
+    },
+    "slowest_cases": [
+      {
+        "case_id": "TC-955",
+        "latency": 0.1577,
+        "score": 1.5,
+        "question": "Sau chuyến xe tài xế thái độ kém và có tính phí sai, nên ưu tiên xử lý theo tài liệu nào?"
+      },
+      {
+        "case_id": "TC-005",
+        "latency": 0.1563,
+        "score": 1.5,
+        "question": "Nếu gặp vấn đề về báo cáo mất đồ trên xe, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-011",
+        "latency": 0.1542,
+        "score": 1.5,
+        "question": "Nếu gặp vấn đề về quy tắc an toàn chuyến xe, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-014",
+        "latency": 0.1527,
+        "score": 1.5,
+        "question": "Nếu gặp vấn đề về thay đổi điểm đón trả, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-041",
+        "latency": 0.1524,
+        "score": 2.0,
+        "question": "Nếu gặp vấn đề về hỗ trợ người khuyết tật, các bước xử lý chuẩn là gì?"
+      }
+    ],
+    "lowest_score_cases": [
+      {
+        "case_id": "TC-002",
+        "score": 1.0,
+        "hit_rate": 1.0,
+        "question": "Nếu gặp vấn đề về đặt lại mật khẩu tài khoản, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-001",
+        "score": 1.5,
+        "hit_rate": 1.0,
+        "question": "Tôi cần đặt lại mật khẩu tài khoản. Phải làm như thế nào?"
+      },
+      {
+        "case_id": "TC-003",
+        "score": 1.5,
+        "hit_rate": 1.0,
+        "question": "Khách nói 'đặt lại mật khẩu tài khoản' nhưng thiếu thông tin. Agent nên trả lời thế nào?"
+      },
+      {
+        "case_id": "TC-005",
+        "score": 1.5,
+        "hit_rate": 1.0,
+        "question": "Nếu gặp vấn đề về báo cáo mất đồ trên xe, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-006",
+        "score": 1.5,
+        "hit_rate": 1.0,
+        "question": "Khách nói 'báo cáo mất đồ trên xe' nhưng thiếu thông tin. Agent nên trả lời thế nào?"
+      }
+    ]
+  },
+  "candidate_case_stats": {
+    "status": {
+      "pass": 55
+    },
+    "type": {
+      "fact": 15,
+      "procedural": 15,
+      "ambiguous": 15,
+      "prompt-injection": 1,
+      "goal-hijacking": 1,
+      "out-of-context": 1,
+      "conflicting-info": 1,
+      "privacy-edge": 1,
+      "multi-hop": 5
+    },
+    "failure_cluster": {
+      "pass": 54,
+      "judge_disagreement": 1
+    },
+    "slowest_cases": [
+      {
+        "case_id": "TC-021",
+        "latency": 0.108,
+        "score": 5.0,
+        "question": "Khách nói 'mã khuyến mãi' nhưng thiếu thông tin. Agent nên trả lời thế nào?"
+      },
+      {
+        "case_id": "TC-008",
+        "latency": 0.1007,
+        "score": 5.0,
+        "question": "Nếu gặp vấn đề về hoàn tiền khi hủy chuyến, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-028",
+        "latency": 0.1006,
+        "score": 5.0,
+        "question": "Tôi cần khiếu nại phí phụ thu. Phải làm như thế nào?"
+      },
+      {
+        "case_id": "TC-955",
+        "latency": 0.0992,
+        "score": 5.0,
+        "question": "Sau chuyến xe tài xế thái độ kém và có tính phí sai, nên ưu tiên xử lý theo tài liệu nào?"
+      },
+      {
+        "case_id": "TC-032",
+        "latency": 0.0991,
+        "score": 5.0,
+        "question": "Nếu gặp vấn đề về chính sách vật nuôi, các bước xử lý chuẩn là gì?"
+      }
+    ],
+    "lowest_score_cases": [
+      {
+        "case_id": "TC-004",
+        "score": 3.5,
+        "hit_rate": 1.0,
+        "question": "Tôi cần báo cáo mất đồ trên xe. Phải làm như thế nào?"
+      },
+      {
+        "case_id": "TC-006",
+        "score": 3.5,
+        "hit_rate": 1.0,
+        "question": "Khách nói 'báo cáo mất đồ trên xe' nhưng thiếu thông tin. Agent nên trả lời thế nào?"
+      },
+      {
+        "case_id": "TC-005",
+        "score": 4.0,
+        "hit_rate": 1.0,
+        "question": "Nếu gặp vấn đề về báo cáo mất đồ trên xe, các bước xử lý chuẩn là gì?"
+      },
+      {
+        "case_id": "TC-024",
+        "score": 4.0,
+        "hit_rate": 1.0,
+        "question": "Khách nói 'đánh giá tài xế' nhưng thiếu thông tin. Agent nên trả lời thế nào?"
+      },
+      {
+        "case_id": "TC-020",
+        "score": 4.5,
+        "hit_rate": 1.0,
+        "question": "Nếu gặp vấn đề về mã khuyến mãi, các bước xử lý chuẩn là gì?"
+      }
+    ]
+  }
+}

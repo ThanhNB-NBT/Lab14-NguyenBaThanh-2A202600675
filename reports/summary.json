@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "version": "Agent_V2_Optimized",
+    "total": 55,
+    "timestamp": "2026-06-16 16:53:52",
+    "judge_mode": "nvidia",
+    "judge_models": "nvidia/llama-3.3-nemotron-super-49b-v1,nvidia/nemotron-3-nano-30b-a3b",
+    "rate_limit_rpm": 40
+  },
+  "metrics": {
+    "avg_score": 4.836363636363636,
+    "pass_rate": 1.0,
+    "fail_count": 0,
+    "hit_rate": 1.0,
+    "mrr": 1.0,
+    "precision_at_k": 0.38181818181818183,
+    "recall_at_k": 1.0,
+    "agreement_rate": 0.9,
+    "avg_latency_seconds": 0.09125454545454546,
+    "p95_latency_seconds": 0.0992,
+    "duration_seconds": 168.95624110000063,
+    "total_tokens": 9608,
+    "avg_tokens_per_case": 174.6909090909091,
+    "estimated_cost_usd": 0.0019215999999999999
+  },
+  "baseline_metrics": {
+    "avg_score": 1.9,
+    "pass_rate": 0.07272727272727272,
+    "fail_count": 51,
+    "hit_rate": 0.9818181818181818,
+    "mrr": 0.9606060606060607,
+    "precision_at_k": 0.3696969696969697,
+    "recall_at_k": 0.9727272727272728,
+    "agreement_rate": 0.5909090909090909,
+    "avg_latency_seconds": 0.14329272727272727,
+    "p95_latency_seconds": 0.1527,
+    "duration_seconds": 171.96529409999857,
+    "total_tokens": 7651,
+    "avg_tokens_per_case": 139.1090909090909,
+    "estimated_cost_usd": 0.0015302
+  },
+  "regression": {
+    "decision": "APPROVE",
+    "thresholds": {
+      "score_delta_min": 0.2,
+      "pass_rate_min": 1.0,
+      "agreement_rate_min": 0.75,
+      "p95_latency_max": 2.0,
+      "cost_max_usd": 0.05
+    },
+    "deltas": {
+      "avg_score": 2.936363636363636,
+      "pass_rate": 0.9272727272727272,
+      "hit_rate": 0.018181818181818188,
+      "mrr": 0.039393939393939315,
+      "agreement_rate": 0.3090909090909091,
+      "p95_latency_seconds": -0.053500000000000006,
+      "estimated_cost_usd": 0.00039139999999999986
+    },
+    "checks": {
+      "quality_score_delta": true,
+      "quality_pass_rate": true,
+      "retrieval_hit_rate_non_regression": true,
+      "retrieval_mrr_non_regression": true,
+      "judge_agreement": true,
+      "performance_latency": true,
+      "cost_budget": true
+    },
+    "reason": "V2 đạt ngưỡng chất lượng, retrieval, agreement, hiệu năng và chi phí."
+  }
+}
